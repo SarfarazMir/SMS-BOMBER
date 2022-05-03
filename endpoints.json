@@ -21,7 +21,7 @@
        "Accept-Language": "en-US,en;q=0.9"
   },
   "body_param": {
-    "phone": 7006739699,
+    "phone": "phone_number",
     "ref_url": "https%3A%2F%2Fwww.geneo.in%2Flp%2Flive-classes%2F"
   }
 },
@@ -54,7 +54,7 @@
         "Accept-Encoding": "gzip, deflate",
         "Accept-Language": "en-US,en;q=0.9"
     },
-    "body_param": { "otpMobile": 7006739699}
+    "body_param": { "otpMobile": "phone_number"}
   },
   {
     "url": "https://www.21kschool.com/indian-landing-page/sendotp.php",
@@ -79,7 +79,7 @@
         "Connection": "close"
     },
     "body_param": {
-      "Phonenumber": 917006739699
+      "Phonenumber": "phone_number"
     }
   },
   {
@@ -106,7 +106,7 @@
         "Accept-Language": "en-US,en;q=0.9"
     },
     "body_param": {
-      "username":"7006739699"
+      "username":"phone_number"
     }
   },
   {
