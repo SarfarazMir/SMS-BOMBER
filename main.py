@@ -51,9 +51,7 @@ def main():
     data = json.load(file)
 
     phone_number = input("Target phone number (without country code): ")
-    if phone_number == '7006739699':
-       print("This number is protected")
-       exit()
+    
     delay = float(input("Enter delay time (in seconds): "))
     number_of_threads = int(input("Enter number of threads: "))
     signal.signal(signal.SIGINT, handler)
