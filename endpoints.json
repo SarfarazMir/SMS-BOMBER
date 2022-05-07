@@ -245,6 +245,112 @@
           "Accept-Language": "en-US,en;q=0.9"
     },
     "body_param": {"phone_number":"%{phone_number}"}
-  }
-    ]
+  },
+      {
+          "url": "https://api.whitehatjr.com/api/V1/otp/generate?deviceId=b8565a95-9442-408f-94a8-435fd0f22064&timezone=Asia%2FCalcutta&trackingCode=trackingCode%7CAB-11169-V-B%7CAB-11137-V-A%7CAB-11159-V-A%7CAB-11164-V-A%7CAB-11194-V-B%7CAB-11140-V-A%7CAB-11186-V-A%7CAB-11167-V-A%7CAB-11182-V-B%7CAB-29-V-B%7CAB-11142-V-A%7CAB-11188-V-B%7CAB-11150-V-B%7CAB-22-V-B%7CAB-11192-V-A%7CAB-11183-V-B%7CAB-11151-V-B%7CAB-11200-V-A%7CAB-24-V-C%7CAB-11154-V-A%7CAB-13-V-B%7CAB-11198-V-A%7CAB-11152-V-A%7CAB-11166-V-A%7CAB-26-V-B%7CAB-11195-V-A%7CAB-11136-V-A%7CAB-11196-V-A%7CAB-11184-V-A%7CAB-31-V-A%7CAB-18-V-A%7CAB-11193-V-B%7CAB-11176-V-B%7CAB-11191-V-B%7CAB-11181-V-B%7CAB-11156-V-A%7CAB-15-V-A%7CAB-34-V-A%7CAB-28-V-B%7CAB-11163-V-A%7CAB-11204-V-A%7CAB-11201-V-B%7CAB-25-V-B%7CAB-11135-V-A%7CAB-11155-V-A%7CAB-11161-V-A%7CAB-21-V-C%7CAB-11202-V-A%7CAB-17-V-A%7CAB-37-V-A%7CAB-23-V-C%7CAB-11153-V-B%7CAB-11175-V-A%7CAB-12-V-A%7CAB-11165-V-A%7CAB-11160-V-B%7CAB-27-V-B&regionId=IN&courseType=CODING&brandId=whitehatjr&timestamp=1651692031580&_vercel_no_cache=1",
+          "headers": {
+              "Host": "api.whitehatjr.com",
+              "Cookie": "deviceId=b8565a95-9442-408f-94a8-435fd0f22064; abTests=trackingCode%7CAB-11169-V-B%7CAB-11137-V-A%7CAB-11159-V-A%7CAB-11164-V-A%7CAB-11194-V-B%7CAB-11140-V-A%7CAB-11186-V-A%7CAB-11167-V-A%7CAB-11182-V-B%7CAB-29-V-B%7CAB-11142-V-A%7CAB-11188-V-B%7CAB-11150-V-B%7CAB-22-V-B%7CAB-11192-V-A%7CAB-11183-V-B%7CAB-11151-V-B%7CAB-11200-V-A%7CAB-24-V-C%7CAB-11154-V-A%7CAB-13-V-B%7CAB-11198-V-A%7CAB-11152-V-A%7CAB-11166-V-A%7CAB-26-V-B%7CAB-11195-V-A%7CAB-11136-V-A%7CAB-11196-V-A%7CAB-11184-V-A%7CAB-31-V-A%7CAB-18-V-A%7CAB-11193-V-B%7CAB-11176-V-B%7CAB-11191-V-B%7CAB-11181-V-B%7CAB-11156-V-A%7CAB-15-V-A%7CAB-34-V-A%7CAB-28-V-B%7CAB-11163-V-A%7CAB-11204-V-A%7CAB-11201-V-B%7CAB-25-V-B%7CAB-11135-V-A%7CAB-11155-V-A%7CAB-11161-V-A%7CAB-21-V-C%7CAB-11202-V-A%7CAB-17-V-A%7CAB-37-V-A%7CAB-23-V-C%7CAB-11153-V-B%7CAB-11175-V-A%7CAB-12-V-A%7CAB-11165-V-A%7CAB-11160-V-B%7CAB-27-V-B; AB_DATA_GENERATED=true; _fbp=fb.1.1651691997240.2053075914; feGeneratedDeviceId=false; ajs_anonymous_id=%223c7b8c6a-31a9-42d5-bc60-6389b5f29a52%22; _scid=7ef21db3-c28e-4e68-82a1-6f44656332ea; amplitude_idundefinedwhitehatjr.com=eyJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOm51bGwsImxhc3RFdmVudFRpbWUiOm51bGwsImV2ZW50SWQiOjAsImlkZW50aWZ5SWQiOjAsInNlcXVlbmNlTnVtYmVyIjowfQ==; _gcl_au=1.1.906130685.1651692003; _gid=GA1.2.1577603404.1651692003; _gat_gtag_UA_127138116_5=1; _ga=GA1.1.2030550241.1651692003; _ga_G1JDQQ3VRY=GS1.1.1651692002.1.0.1651692003.0; _sctr=1|1651689000000; _uetsid=33e52b60cbdf11eca5aba1c90c430be5; _uetvid=33e56230cbdf11ec88c537f974983836; _li_dcdm_c=.whitehatjr.com; _lc2_fpi=b384e0c480b4--01g2887t3r8xy2pzycfjmxq5xg; _hsu=hs.1651692005765.0ef1b10b1a; _hscl=; _hjSessionUser_1347255=eyJpZCI6IjA5M2Q4ZDk2LWQ0MzAtNTQ5Ni04NmY1LWE4ZTFkY2VkODUyOCIsImNyZWF0ZWQiOjE2NTE2OTIwMTAxNTgsImV4aXN0aW5nIjpmYWxzZX0=; _hjFirstSeen=1; _hjSession_1347255=eyJpZCI6ImNjNTlhN2E4LTVlZTItNDg1MS1hZDhiLWFkYzJlZmY3OWJjMyIsImNyZWF0ZWQiOjE2NTE2OTIwMTAxNjUsImluU2FtcGxlIjp0cnVlfQ==; _hjAbsoluteSessionInProgress=0; voxusmediamanager_id=16516920120350.5106812534967642gxxutslaktp; voxusmediamanager__ip=49.36.201.0; _clck=ow7o1w|1|f16|0; _clsk=asakkb|1651692016115|1|1|h.clarity.ms/collect; amplitude_id_76f99e8624755c84810d24c4e7c45f44whitehatjr.com=eyJkZXZpY2VJZCI6IjFiY2ZlMjFjLWEzZWEtNDI3Ni1hOGFiLTdhYjI5YzAyYTk4OFIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTY1MTY5MjAwMjUxNiwibGFzdEV2ZW50VGltZSI6MTY1MTY5MjAzMTU4NiwiZXZlbnRJZCI6NiwiaWRlbnRpZnlJZCI6Miwic2VxdWVuY2VOdW1iZXIiOjh9; _dd_s=logs=1&id=7670a36f-e05b-45bd-903b-e0dff4fcdac4&created=1651691996406&expire=1651692931659&rum=0",
+              "Content-Length": "40",
+              "Sec-Ch-Ua": "\"(Not(A:Brand\";v=\"8\", \"Chromium\";v=\"101\"",
+              "Sec-Ch-Ua-Mobile": "?0",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36",
+              "Whjr-Amplitude-Sessionid": "1651692002516",
+              "Accept": "application/json, text/plain, */*",
+              "Whjr-Segment-Anonymousid": "3c7b8c6a-31a9-42d5-bc60-6389b5f29a52",
+              "Content-Type": "application/json;charset=UTF-8",
+              "Sec-Ch-Ua-Platform": "Windows",
+              "Origin": "https://code.whitehatjr.com",
+              "Sec-Fetch-Site": "same-site",
+              "Sec-Fetch-Mode": "cors",
+              "Sec-Fetch-Dest": "empty",
+              "Referer": "https://code.whitehatjr.com/",
+              "Accept-Encoding": "gzip, deflate",
+              "Accept-Language": "en-US,en;q=0.9"
+           },
+      "body_param": "{\"dialCode\":\"+91\",\"mobile\":\"%{phone_number}%\"}"
+      },
+      {
+        "url": "https://jsso.indiatimes.com/sso/crossapp/identity/web/registerOnlyMobile",
+        "headers": {
+                "Host": "jsso.indiatimes.com",
+                "Cookie": "deviceid=848jlm5gzbmkkiyvipbdn928w",
+                "Content-Length": "131",
+                "Sec-Ch-Ua": "\"(Not(A:Brand\";v=\"8\", \"Chromium\";v=\"101\"",
+                "Channel": "mensxp",
+                "Csrftoken": "",
+                "Gdpr": "",
+                "Sdkversion": "0.6.11",
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36",
+                "Isjssocrosswalk": "true",
+                "Sec-Ch-Ua-Mobile": "?0",
+                "Tksec": "",
+                "Platform": "WAP",
+                "Ssec": "",
+                "Csut": "",
+                "Sec-Ch-Ua-Platform": "Windows",
+                "Accept": "*/*",
+                "Origin": "https://shop.mensxp.com",
+                "Sec-Fetch-Site": "cross-site",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Dest": "empty",
+                "Referer": "https://shop.mensxp.com/",
+                "Accept-Encoding": "gzip, deflate",
+                "Accept-Language": "en-US,en;q=0.9"
+        },
+        "body_param": "{\"firstName\":\"\",\"lastName\":\"\",\"gender\":\"\",\"mobile\":\"{%phone_number}%\",\"termsAccepted\":\"1\",\"shareDataAllowed\":\"1\",\"timespointsPolicy\":\"1\"}"
+      },
+      {
+        "url": "https://api.dream11.com/sendsmslink HTTP/1.1",
+        "headers": {
+              "Host": "api.dream11.com",
+              "Content-Length": "67",
+              "Sec-Ch-Ua": "\"(Not(A:Brand\";v=\"8\", \"Chromium\";v=\"101\"",
+              "Sec-Ch-Ua-Mobile": "?0",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36",
+              "Sec-Ch-Ua-Platform": "Windows",
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*",
+              "Origin": "https://d13ir53smqqeyp.cloudfront.net",
+              "Sec-Fetch-Site": "cross-site",
+              "Sec-Fetch-Mode": "cors",
+              "Sec-Fetch-Dest": "empty",
+              "Referer": "https://d13ir53smqqeyp.cloudfront.net/",
+              "Accept-Encoding": "gzip, deflate",
+              "Accept-Language": "en-US,en;q=0.9",
+              "Connection": "close"
+        },
+        "body_param": {
+          "siteId":"1",
+          "mobileNum":"%{phone_number}",
+          "appType": "androidfull",
+          "abtest":"2",
+          "ran":"9.89"
+        }
+      },
+      {
+          "url": "https://login.web.ajio.com/api/auth/signupSendOTP",
+          "headers": {
+                "Host": "login.web.ajio.com",
+                "Content-Length": "203",
+                "Sec-Ch-Ua": "\"(Not(A:Brand\";v=\"8\", \"Chromium\";v=\"101\"",
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Sec-Ch-Ua-Mobile": "?0",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36",
+                "Sec-Ch-Ua-Platform": "Windows",
+                "Origin": "https://www.ajio.com",
+                "Sec-Fetch-Site": "same-site",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Dest": "empty",
+                "Referer": "https://www.ajio.com/",
+                "Accept-Encoding": "gzip, deflate",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Connection": "close"
+
+          },
+        "body_param": "{\"firstName\":\"randomguy\",\"login\":\"random1234@gmail.com\",\"password\":\"random@1234\",\"genderType\":\"Male\",\"mobileNumber\":\"%{phone_number}\",\"rilFnlRegisterReferralCode\":\"\",\"requestType\":\"SENDOTP\",\"newDesign\":false}"
+      }
+      ]
 }
