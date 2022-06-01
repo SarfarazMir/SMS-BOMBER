@@ -85,8 +85,9 @@ def main():
     data = json.load(file)
 
     phone_number = input("Target phone number (without country code): ")
-    if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ=='):
-        print("This number is protected")
+    if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
+            or phone_number == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
+        print(base64.b64decode(b'VGhpcyBudW1iZXIgaXMgcHJvdGVjdGVk').decode('utf-8'))
         exit()
     delay = float(input("Enter delay time (in seconds): "))
     number_of_threads = int(input("Enter number of threads: "))
