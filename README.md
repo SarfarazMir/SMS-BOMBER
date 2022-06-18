@@ -1,7 +1,7 @@
 # SMS-BOMBER
 pip3 install -r requirements.txt
 
-# SETUP FOR WINDOWS
+<h2>SETUP FOR WINDOWS</h2>
 
 <b> STEPS</b></br>
 1. Download Windows Expert Bundle from the following link:<br/>
