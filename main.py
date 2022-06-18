@@ -42,7 +42,7 @@ def validate_number(phone_number):
         exit()
 
     if re.search('[a-zA-Z]', phone_number):
-        print(f"{Fore.RED}Error: Phone number should contain only digits.{Style.RESET_ALL}")
+        print(f"{Fore.RED}Error: Phone number should only contain digits.{Style.RESET_ALL}")
         exit()
 
 
