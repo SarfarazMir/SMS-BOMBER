@@ -19,7 +19,7 @@ https://www.torproject.org/download/tor/
 1. Type <b>sudo apt update && sudo apt upgrade && sudo apt install tor</b> in terminal.
 2. Start the tor service by typing <b>sudo service tor start</b>
 3. Now generate a hashed password by typing <b>tor --hash-password <<i>your password</i></b>>
-4. Type <b>nano /etc/tor/torrc</b> and uncomment the <b>ControlPort 9051 and HashedControlPassword <<span>paste the generated hash></span></b> lines and save it.
+4. Type <b>sudo nano /etc/tor/torrc</b> and uncomment the <b>ControlPort 9051 and HashedControlPassword <<span>paste the generated hash></span></b> lines and save it.
 5. At last, type <b>sudo service tor restart</b>
 
 <h2>SETUP FOR TERMUX</h2>
