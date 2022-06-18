@@ -4,7 +4,7 @@ pip3 install -r requirements.txt
 <h2>SETUP FOR WINDOWS</h2>
 
 <b> STEPS</b></br>
-1. Download Windows Expert Bundle from the following link:<br/>
+1. Download <b>Windows Expert Bundle</b> from the following link:<br/>
 https://www.torproject.org/download/tor/
 2. Unzip the <b>Tor</b> folder and place it in the root of drive <b>C</b>
 3. Open the <b>Command Prompt</b> or <b>Windows Powershell</b> as <b>Administator</b> and type <b>echo( > C:\Tor\torrc</b>
