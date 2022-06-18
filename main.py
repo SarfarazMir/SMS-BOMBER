@@ -2,12 +2,14 @@ import base64
 import json
 import signal
 import sys
+import requests
+import re
 from threading import Thread
 from time import sleep
-import requests
 from colorama import Fore, Style, init
 from stem import Signal
 from stem.control import Controller
+from stem.connection import IncorrectPassword
 
 
 def handler(signum, frame):
@@ -19,10 +21,14 @@ if sys.platform == 'win32':
     init(convert=True)
 
 
-def change_ip():
-    with Controller.from_port() as controller:
-        controller.authenticate(password="password")
-        controller.signal(Signal.NEWNYM)
+def change_ip(password):
+    try:
+        with Controller.from_port() as controller:
+            controller.authenticate(password=password)
+            controller.signal(Signal.NEWNYM)
+    except IncorrectPassword:
+        print(f"{Fore.RED}Error: Password didn't match{Style.RESET_ALL}")
+        exit()
 
 
 # don't edit, you may break the script
@@ -33,6 +39,10 @@ def validate_number(phone_number):
     if phone_number == base64.b64decode(b'NzAwNjczOTY5OQ==').decode('utf-8') \
             or phone_number == base64.b64decode(b'OTU5NjU4MTU2NA==').decode('utf-8'):
         print(base64.b64decode(b'VGhpcyBudW1iZXIgaXMgcHJvdGVjdGVk').decode('utf-8'))
+        exit()
+
+    if re.search('[a-zA-Z]', phone_number):
+        print(f"{Fore.RED}Error: Phone number should contain only digits.{Style.RESET_ALL}")
         exit()
 
 
@@ -113,12 +123,14 @@ def main():
 
     phone_number = input("Target phone number (without country code): ")
     validate_number(phone_number)
-    delay = float(input("Enter delay time (in seconds): "))
+
     try:
+        delay = float(input("Enter delay time (in seconds): "))
         number_of_threads = int(input("Enter number of threads: "))
         signal.signal(signal.SIGINT, handler)
+        password = input("Enter the password (for which you generated the hash): ")
         # change ip
-        change_ip()
+        change_ip(password=password)
         # create tor session
         session = get_tor_session()
         for _ in range(number_of_threads):
@@ -130,7 +142,7 @@ def main():
             f"{Fore.CYAN}Using IP address :{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{current_ip.get('origin')}{Style.RESET_ALL}")
 
     except ValueError:
-        print(f"{Fore.RED}Error: Number of threads must be an integer{Style.RESET_ALL}")
+        print(f"{Fore.RED}Error: Please, check your input{Style.RESET_ALL}")
         exit()
 
 
