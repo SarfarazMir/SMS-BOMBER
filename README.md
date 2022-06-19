@@ -32,9 +32,6 @@ https://www.torproject.org/download/tor/
 7. Finally, type <b>sudo python3 setup.py install</b>
 
 # HOW TO USE IT?
-<h2>DEPENDENCIES</h2>
-<b>FOR WINDOWS</b><br/><br/>
-python setup.py install<br/><br/>
-<b>FOR LINUX</b><br/><br/>
+<b>python3 main.py</b>
 
 
