@@ -23,7 +23,7 @@ https://www.torproject.org/download/tor/
 3. Now generate a hashed password by typing <b>tor --hash-password <<i>your password</i></b>>
 4. Type <b>sudo nano /etc/tor/torrc</b> and uncomment the <b>ControlPort 9051 and HashedControlPassword <<span>paste the generated hash></span></b> lines and save it.
 5. Type <b>sudo service tor restart</b>
-6. At last, type <b>python3 setup.py install</b>
+6. At last, type <b>sudo python3 setup.py install</b>
 <h2>SETUP FOR TERMUX</h2>
 
 <b> STEPS</b></br>
@@ -32,7 +32,7 @@ https://www.torproject.org/download/tor/
 4. Now generate a hashed password by typing <b>tor --hash-password <<i>your password</i></b>>
 5. Type <b>nano $PREFIX/etc/tor/torrc</b> and uncomment the <b>ControlPort 9051 and HashedControlPassword <<span>paste the generated hash></span></b> lines and save it.
 6. Type <b>sv restart tor</b>
-7. Finally, type <b>sudo python3 setup.py install</b>
+7. Finally, type <b>python3 setup.py install</b>
 
 # HOW TO USE IT?
 <b>python3 main.py</b>
