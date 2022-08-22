@@ -11,7 +11,7 @@ https://www.torproject.org/download/tor/
 5. Open the <b>C:\Tor\torrc</b> file in your favourite text editor and paste following lines:<br/> <b>ControlPort 9051</b><br/><b>HashedControlPassword <<i>your generated hash</i>></b>
   
 6. Type <b>C:\Tor\tor.exe --service install -options -f "C:\Tor\torrc"</b>
-7. Lastly, type <b>sudo python setup.py install</b>
+7. Lastly, type <b>python setup.py install</b>
 <h2>SETUP FOR LINUX</h2>
 
 <b> STEPS</b></br>
