@@ -1,3 +1,6 @@
+<h1>Attention!</h1>
+<h2>It is for educational purposes only. I am not responsible for any misuse.</h2>
+
 # SMS-BOMBER
 
 <h2>SETUP FOR WINDOWS</h2>
